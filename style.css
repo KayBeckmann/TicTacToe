@@ -12,7 +12,7 @@ table{
   border-collapse: collapse;
 }
 tr{
-  width: 750px;
+  width: 100%;
 }
 table tr:first-child td{
   border-top:0;
@@ -27,12 +27,20 @@ table tr td:last-child{
   border-right: 0;
 }
 td{
-  width: 250px;
-  height: 250px;
+  width: 33%;
+  height: 33%;
   text-align: center;
   border: 5px solid black;
 }
 /* Klassen */
+.container{
+  background-color: purple;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* ID's */
 /* Mobile View 1000px*/
 @media (max-width: 800px) {
