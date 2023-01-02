@@ -11,7 +11,7 @@
   <!-- JavaScript -->
   <script src="./script.js"></script>
 </head>
-<body>
+<body onload="initailsation()">
   <div class="headline">
     <h1>TicTacToe</h1>
   </div>
@@ -19,43 +19,43 @@
   <div class="container">
   <table id="table">
     <tr>
-      <td>
+      <td onclick="fillShape(0, 0)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
-      <td>
+      <td onclick="fillShape(0, 1)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
-      <td>
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
-      </td>
-      <td>
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
-      </td>
-      <td>
+      <td onclick="fillShape(0, 2)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
     </tr>
     <tr>
-      <td>
+      <td onclick="fillShape(1, 0)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
-      <td>
+      <td onclick="fillShape(1, 1)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
-      <td>
+      <td onclick="fillShape(1, 2)">
+        <img class="sign d-none" src="./images/circle.png">
+        <img class="sign d-none" src="./images/cross.png">
+      </td>
+    </tr>
+    <tr>
+      <td onclick="fillShape(2, 0)">
+        <img class="sign d-none" src="./images/circle.png">
+        <img class="sign d-none" src="./images/cross.png">
+      </td>
+      <td onclick="fillShape(2, 1)">
+        <img class="sign d-none" src="./images/circle.png">
+        <img class="sign d-none" src="./images/cross.png">
+      </td>
+      <td onclick="fillShape(2, 2)">
         <img class="sign d-none" src="./images/circle.png">
         <img class="sign d-none" src="./images/cross.png">
       </td>
