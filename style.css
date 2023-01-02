@@ -28,6 +28,10 @@ td{
   width: 150px;
   height: 150px;
   border: 5px solid black;
+  /* cursor: pointer; */
+}
+td:hover{
+  background-color:rgba(1, 49, 182, 0.281);
 }
 /* Klassen */
 .headline{
@@ -53,6 +57,9 @@ td{
   left:10%;
   right: 10%;
   width: 80%;
+}
+.d-none{
+  display: none;
 }
 /* ID's */
 /* Mobile View 1000px*/
