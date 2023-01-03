@@ -95,12 +95,10 @@ td:hover{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .resetbtn{
-  top:auto;
-  bottom: auto;
-  left:auto;
-  right: auto;
+  margin-top: 20px;
 }
 /* ID's */
 /* Mobile View 1000px*/
