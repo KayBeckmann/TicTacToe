@@ -1,13 +1,12 @@
 let rows = new Array;
 let gamefield = new Array;
 let player = true;
-let finished = false;
 
 function initailsation(){
   for(let row=0; row<3;row++){
     rows=[];
     for(let column=0; column<3; column++){
-      rows.push(10);
+      rows.push(0);
     }
     gamefield.push(rows);
   }
@@ -17,7 +16,7 @@ function reset(){
   for(let row=0; row<gamefield.length; row++){
     for(let column=0; column<rows.length; column++){
       let id = String(row) + String(column);
-      gamefield[row][column] = 10;
+      gamefield[row][column] = 0;
       document.getElementById(id).innerHTML = "";
     }
   }
@@ -29,24 +28,22 @@ function reset(){
 function fillShape(row, column){
   let field = document.getElementById(String(row)+String(column))
 
-  if(gamefield[Number(row)][Number(column)] == 10){
+  if(gamefield[Number(row)][Number(column)] == 0){
     field.innerHTML = getSign(row, column);
     checkForWin();
-    console.log(gamefield);
+    player = !player;
+    changePlayerSign();  
   }else{
-    console.log("ERROR");
+    alert("Feld ist schon belegt!");
   }
 }
 
 function getSign(row, column){
-  gamefield[Number(row)][Number(column)] = player;
   if(player){
-    player = false;
-    changePlayerSign();
+    gamefield[Number(row)][Number(column)] = "circle";
     return `<img class="sign" src="./images/circle.png">`;
   }else{
-    player = true;
-    changePlayerSign();
+    gamefield[Number(row)][Number(column)] = "cross";
     return `<img class="sign" src="./images/cross.png">`;
   }
 }
@@ -64,8 +61,42 @@ function changePlayerSign(){
 }
 
 function checkForWin(){
-  if(gamefield[0][0] == gamefield[0][1] == gamefield[0][2]){
-    console.log("GEWONNEN");
+  if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[0][1] && gamefield[0][1] === gamefield[0][2]){ //Waagerecht oben
     document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[1][0] != 0 && gamefield[1][0] === gamefield[1][1] && gamefield[1][1] === gamefield[1][2]){ //Waagerecht mitte
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[2][0] != 0 && gamefield[2][0] === gamefield[2][1] && gamefield[2][1] === gamefield[2][2]){ //Waagerecht unten
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[1][0] && gamefield[1][0] === gamefield[2][0]){ //Senkrecht links
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[0][1] != 0 && gamefield[0][1] === gamefield[1][1] && gamefield[1][1] === gamefield[2][1]){ //Senkrecht mitte
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[0][2] != 0 && gamefield[0][2] === gamefield[1][2] && gamefield[2][2] === gamefield[0][2]){ //Senkrecht rechts
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[1][1] && gamefield[1][1] === gamefield[2][2]){ //Diagonale links oben -> rechts unten
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[2][0] != 0 && gamefield[2][0] === gamefield[1][1] && gamefield[1][1] === gamefield[0][2]){ //Diagonale links unten -> rechts oben
+    document.getElementById("dialog").classList.remove("d-none");
+  }
+  if(gamefield[0][0] != 0 && gamefield[0][1] != 0 && gamefield[0][2] != 0 && gamefield[1][0] != 0 && gamefield[1][1] != 0 && gamefield[1][2] != 0 && gamefield[2][0] != 0 && gamefield[2][1] != 0 && gamefield[2][2] != 0){
+    document.getElementById("dialog").classList.remove("d-none");
+    document.getElementById("winner").innerHTML = "Unentschieden!!!";
+    return 0;
+  }
+  winner();
+}
+
+function winner(){
+  if(player){
+    document.getElementById("winner").innerHTML = "Kreis hat gewonnen";
+  }else{
+    document.getElementById("winner").innerHTML = "Kreuz hat gewonnen";
   }
 }
