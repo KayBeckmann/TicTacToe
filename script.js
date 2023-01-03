@@ -24,14 +24,18 @@ function reset(){
 
 function fillShape(row, column){
   let field = document.getElementById(String(row)+String(column))
-  let sign = fillSign();
 
-  gamefield[Number(row)][Number(column)] = sign;
-  field.innerHTML = sign;
-  console.log(gamefield);
+  if(gamefield[Number(row)][Number(column)] == 0){
+    let sign = getSign();
+    gamefield[Number(row)][Number(column)] = sign;
+    field.innerHTML = sign;
+    console.log(gamefield);
+  }else{
+    console.log("ERROR");
+  }
 }
 
-function fillSign(){
+function getSign(){
   if(player){
     player = false;
     changePlayerSign();
