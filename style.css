@@ -5,6 +5,9 @@ html {
 body {
   margin: 0;
 }
+h1{
+  font-size: 40px;
+}
 button{
   box-shadow: 5px 5px 10px 0px #091685;
 	background-color:#1020cc;
@@ -61,6 +64,19 @@ td:hover{
   top: 0;
   margin: 0;
   text-justify: center;
+}
+.player-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.player{
+  margin-right: 20px;
+  font-size: 30px;
+}
+.little-img{
+  height: 50px;
 }
 .container{
   margin-top: 10vh;
