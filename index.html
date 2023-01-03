@@ -14,50 +14,43 @@
 <body onload="initailsation()">
   <div class="headline">
     <h1>TicTacToe</h1>
+    <img class="" id="circle" src="./images/circle.png" alt="">
+    <img class="d-none" id="cross" src="./images/cross.png" alt="">
   </div>
   
   <div class="container">
   <table id="table">
     <tr>
       <td onclick="fillShape(0, 0)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="00"></div>
       </td>
       <td onclick="fillShape(0, 1)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="01"></div>
       </td>
       <td onclick="fillShape(0, 2)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="02"></div>
       </td>
     </tr>
     <tr>
       <td onclick="fillShape(1, 0)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="10"></div>
       </td>
       <td onclick="fillShape(1, 1)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="11"></div>
       </td>
       <td onclick="fillShape(1, 2)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="12"></div>
       </td>
     </tr>
     <tr>
       <td onclick="fillShape(2, 0)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="20"></div>
       </td>
       <td onclick="fillShape(2, 1)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="21"></div>
       </td>
       <td onclick="fillShape(2, 2)">
-        <img class="sign d-none" src="./images/circle.png">
-        <img class="sign d-none" src="./images/cross.png">
+        <div id="22"></div>
       </td>
     </tr>
   </table>

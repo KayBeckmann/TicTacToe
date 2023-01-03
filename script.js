@@ -1,5 +1,6 @@
 let rows = new Array;
 let gamefield = new Array;
+let player = true;
 
 function initailsation(){
   for(let row=0; row<3;row++){
@@ -22,7 +23,34 @@ function reset(){
 }
 
 function fillShape(row, column){
-  gamefield[Number(row)][Number(column)] = 10;
-  console.log(`Feld(${row}, ${column})`);
-  console.log(gamefield)
+  let field = document.getElementById(String(row)+String(column))
+  let sign = fillSign();
+
+  gamefield[Number(row)][Number(column)] = sign;
+  field.innerHTML = sign;
+  console.log(gamefield);
+}
+
+function fillSign(){
+  if(player){
+    player = false;
+    changePlayerSign();
+    return `<img class="sign" src="./images/circle.png">`;
+  }else{
+    player = true;
+    changePlayerSign();
+    return `<img class="sign" src="./images/cross.png">`;
+  }
+}
+
+function changePlayerSign(){
+  let circle = document.getElementById("circle");
+  let cross = document.getElementById("cross");
+  if(player){
+    circle.classList.remove("d-none");
+    cross.classList.add("d-none");
+  }else{
+    circle.classList.add("d-none");
+    cross.classList.remove("d-none");
+  }
 }
