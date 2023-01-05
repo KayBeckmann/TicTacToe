@@ -63,34 +63,49 @@ function changePlayerSign(){
 function checkForWin(){
   if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[0][1] && gamefield[0][1] === gamefield[0][2]){ //Waagerecht oben
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[1][0] != 0 && gamefield[1][0] === gamefield[1][1] && gamefield[1][1] === gamefield[1][2]){ //Waagerecht mitte
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[2][0] != 0 && gamefield[2][0] === gamefield[2][1] && gamefield[2][1] === gamefield[2][2]){ //Waagerecht unten
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[1][0] && gamefield[1][0] === gamefield[2][0]){ //Senkrecht links
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[0][1] != 0 && gamefield[0][1] === gamefield[1][1] && gamefield[1][1] === gamefield[2][1]){ //Senkrecht mitte
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[0][2] != 0 && gamefield[0][2] === gamefield[1][2] && gamefield[2][2] === gamefield[0][2]){ //Senkrecht rechts
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[0][0] != 0 && gamefield[0][0] === gamefield[1][1] && gamefield[1][1] === gamefield[2][2]){ //Diagonale links oben -> rechts unten
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[2][0] != 0 && gamefield[2][0] === gamefield[1][1] && gamefield[1][1] === gamefield[0][2]){ //Diagonale links unten -> rechts oben
     document.getElementById("dialog").classList.remove("d-none");
+    winner();
+    return 0;
   }
   if(gamefield[0][0] != 0 && gamefield[0][1] != 0 && gamefield[0][2] != 0 && gamefield[1][0] != 0 && gamefield[1][1] != 0 && gamefield[1][2] != 0 && gamefield[2][0] != 0 && gamefield[2][1] != 0 && gamefield[2][2] != 0){
     document.getElementById("dialog").classList.remove("d-none");
     document.getElementById("winner").innerHTML = "Unentschieden!!!";
     return 0;
   }
-  winner();
 }
 
 function winner(){
